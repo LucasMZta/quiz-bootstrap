@@ -4,36 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Aula de Bootstrap</title>
+    <title>Quiz - Responda se puder</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" ></link>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<style>
-    body {
-       background-color: #e9ecef;
-    }
-    .alert {
-        padding: .5rem 1rem .5rem 1rem;
-        border-radius: 0;
-        margin-bottom: 0;
-    }
-    .bg-success, .bg-danger {
-        transition: .5s !important;
-    }
-</style>
 <body>
     <div class="progress rounded-0">
         <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-label="Example With label" style="width: 0%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">0%</div>
     </div>
 <div class="h-100 container-fluid d-flex justify-content-center align-items-center">
     <button class="btn btn-lg btn-warning position-absolute top-50" data-bs-toggle="modal" data-bs-target="#quiz">Iniciar Quiz</button>
-    <div class="finish">
-        
+    
+    <div class="finish d-none d-flex flex-column justify-content-center align-items-center">
+        <img src="assets/image/win.png" width="200">
+        <h5 class="my-3">FIM DO QUIZ</h5>
+        <p class="frase">Voce pode melhorar, hein!?</p>
+        <p class="acerto">Acerto: <span id="correctPerc"> </span> </p>
+        <p>Voce acertou <span id="correctAswers"> </span> questões de <span id="totalQuests"> </span> respondidas</p>
+        <button class="btn btn-lg btn-warning refazer" data-bs-toggle="modal" data-bs-target="#quiz">Refazer Quiz</button>
     </div>
     <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="quiz">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">TITULO DO MODAL</h5>
+                    <h5 class="modal-title"> </h5>
                 </div>
                 <div class="modal-body">
                     <div class="list-group list-group-flush">

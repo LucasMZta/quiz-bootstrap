@@ -11,6 +11,8 @@ const bar = document.querySelector('.progress-bar');
 
 
 function showQuestions() {
+    
+
     let quest = questions[currentQuest];
 
     if(quest) {
@@ -41,6 +43,9 @@ function showQuestions() {
         bar.innerText = `${progress}%`;
         endQuestions();  
     }
+
+    btn.classList.add('d-none');
+
 }
 function verifyAnswer(e){
     let quest = questions[currentQuest];
@@ -71,14 +76,40 @@ function closeQuestions() {
 function endQuestions() {
     let myModalEl = document.querySelector('.modal');
     let modal = bootstrap.Modal.getInstance(myModalEl);
-    modal.hide();
+    const finish = document.querySelector('.finish');
+    finish.classList.remove('d-none');
 
-    bar.style.width = `0%`;
-    bar.innerText = `0%`;
+    const correct = document.querySelector('#correctAswers');
+    const totalQuests = document.querySelector('#totalQuests')
+    const correctPerc = document.querySelector('#correctPerc');
+    const frase = document.querySelector('.frase');
+    let text = '';
+    console.log(correct);
+    console.log(totalQuests);
+    console.log(finish);
+    modal.hide(); 
 
-    document.querySelector('.finish').innerHTML= `<h1> O seu progresso foi de ${(correctAswers/questions.length)*100}% </h1>`;
+    if (((correctAswers / questions.length) * 100) <= 30) {
+        //menor ou igual a 30% de acerto
+        text = 'Você pode melhorar, hein?!';
+    } else if (((correctAswers / questions.length) * 100) >= 80) {
+        //maior ou igual a 80% de acerto
+        text = 'Parabéns! Você ja pode iniciar na programação! :)';
+    } else {
+        //entre 31 e 79% de acerto
+        text = 'Nada mal! Você mandou bem.'
+    }
+    // document.querySelector('.finish').innerHTML= `<h1> O seu progresso foi de ${(correctAswers/questions.length)*100}% </h1>`;
+    correctPerc.innerText = `${((correctAswers/questions.length) * 100)}%`
+    correct.innerText = correctAswers;
+    totalQuests.innerText = questions.length;
+    frase.innerText = text;
+
+    // bar.style.width = `0%`;
+    // bar.innerText = `0%`;
     currentQuest = 0;
     correctAswers = 0;
+    
 }
 function next() {
     showQuestions();
@@ -86,6 +117,8 @@ function next() {
 
 //Iniciar o quiz apertando no INICIAR
 const btn = document.querySelector('.container-fluid .btn');
+const btnRefazer = document.querySelector('.container-fluid .refazer');
 const btnClose = document.querySelector('.btn.btn-danger');
 btn.addEventListener('click',showQuestions);
+btnRefazer.addEventListener('click', showQuestions);
 btnClose.addEventListener('click',closeQuestions);

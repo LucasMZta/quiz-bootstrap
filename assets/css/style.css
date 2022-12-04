@@ -1,0 +1,27 @@
+body {
+    background-color: #e9ecef;
+}
+
+.alert {
+    padding: .5rem 1rem .5rem 1rem;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.opacity-0 {
+    opacity: 0;
+}
+.finish {
+    background-color: #FFF;
+    padding: 1rem;
+}
+.frase {
+    font-weight: 600;
+}
+.acerto {
+    font-weight: bold;
+    color: #FF0000;
+}
+.bg-success,
+.bg-danger {
+    transition: .5s !important;
+}
