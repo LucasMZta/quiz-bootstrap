@@ -3,7 +3,7 @@ let questions = [
     { id: 2, question: 'Qual a forma correta de se criar um link?', options: ['&lt;a href="link">link aqui&lt;/a&gt;', '&lt;span href="link"&gt;Link aqui&lt;/span&gt;', '&lt;link rel="Link" value="Link aqui"&gt;', '&lt;a src="link"&gt;link aqui&lt;/a&gt;' ], answer: 0 },
     { id: 3, question: 'Qual atributo devemos utilizar para inserir propriedades CSS?', options: ['style=""', 'css-style=""', 'css=""', 'background=""'], answer: 0 },
     { id: 4, question: 'Qual a forma correta de se criar uma imagem?', options: ['&lt;image src="link imagem"&gt;', '&lt;figure src="link imagem"&gt;&lt;/figure&gt;', '&lt;img&gt;link imagem&lt;/img&gt;', '&lt;img src="link imagem"&gt;'], answer: 3 },
-    { id: 5, question: 'Qual é o numero?', options: [1, 2, 3, 4], answer: 3 },
+    { id: 5, question: 'Como é criado uma função no Javascript?', options: ['function:minhaFuncao(){ }', 'function = minhaFuncao{ }', 'function minhaFuncao() { }', 'function = minhaFuncao() { }'], answer: 3 },
 ]
 let currentQuest = 0;
 let correctAswers = 0;
