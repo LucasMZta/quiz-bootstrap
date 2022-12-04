@@ -94,7 +94,7 @@ function endQuestions() {
         text = 'Você pode melhorar, hein?!';
     } else if (((correctAswers / questions.length) * 100) >= 80) {
         //maior ou igual a 80% de acerto
-        text = 'Parabéns! Você ja pode iniciar na programação! :)';
+        text = 'Parabéns! Ja pode iniciar na programação! :)';
     } else {
         //entre 31 e 79% de acerto
         text = 'Nada mal! Você mandou bem.'
