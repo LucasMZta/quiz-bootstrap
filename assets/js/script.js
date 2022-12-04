@@ -77,6 +77,8 @@ function endQuestions() {
     bar.innerText = `0%`;
 
     document.querySelector('.finish').innerHTML= `<h1> O seu progresso foi de ${(correctAswers/questions.length)*100}% </h1>`;
+    currentQuest = 0;
+    correctAswers = 0;
 }
 function next() {
     showQuestions();
